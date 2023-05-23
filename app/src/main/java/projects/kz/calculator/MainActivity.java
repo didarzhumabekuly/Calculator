@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnOshiru.setOnClickListener(v -> {buttonClick2('C');});
         btnNukte.setOnClickListener(v -> {buttonClick('.');});
-        btnPlusMinus.setOnClickListener(v -> {buttonClick('!');}); //PlusMinus
+        btnPlusMinus.setOnClickListener(v -> {buttonClick2('!');}); //PlusMinus
     }
 
     public void buttonClick(int n) {
@@ -99,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void buttonClick2(int n) {
-            String sanText = tvSan.getText().toString();
             switch (n) {
                 case 'C':
                     tvSan.setText("0");
                     break;
                 case '!':
+                    String sanText = tvSan.getText().toString();
                     int san = Integer.parseInt(sanText);
 
                     if (san > 0) tvSan.setText("-" + sanText);
