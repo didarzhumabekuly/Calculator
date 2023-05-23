@@ -11,7 +11,10 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
     Button btnOshiru, btnNukte, btnPlusMinus;
-    TextView tvSan;
+    Button btnPlus, btnTen, btnMinus, btnX, btnBolu;
+    TextView tvSan, tvZapis;
+
+    String birinshiSan, ekinshiSan, znak, zapisText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +36,14 @@ public class MainActivity extends AppCompatActivity {
         btnNukte = findViewById(R.id.btnNukte);
         btnPlusMinus = findViewById(R.id.btnPlusMinus);
 
-        tvSan = findViewById(R.id.tv_san);
+        btnPlus = findViewById(R.id.btnPlus);
+        btnTen = findViewById(R.id.btnTen);
+        btnMinus = findViewById(R.id.btnMinus);
+        btnX = findViewById(R.id.btnX);
+        btnBolu = findViewById(R.id.btnBolu);
 
+        tvSan = findViewById(R.id.tv_san);
+        tvZapis = findViewById(R.id.tv_zapis);
 
         btn0.setOnClickListener(v -> {buttonClick(0);});
         btn1.setOnClickListener(v -> {buttonClick(1);});
@@ -50,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
         btnOshiru.setOnClickListener(v -> {buttonClick2('C');});
         btnNukte.setOnClickListener(v -> {buttonClick('.');});
         btnPlusMinus.setOnClickListener(v -> {buttonClick2('!');}); //PlusMinus
+
+        btnPlus.setOnClickListener(v -> {buttonClick3('+');});
+        btnTen.setOnClickListener(v -> {buttonClick4('=');});
+        btnMinus.setOnClickListener(v -> {buttonClick5('-');});
+        btnBolu.setOnClickListener(v -> {buttonClick7('/');});
+        btnX.setOnClickListener(v -> {buttonClick6('x');});
     }
 
     public void buttonClick(int n) {
@@ -117,6 +132,93 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        public void buttonClick3(int n) {
+            switch (n) {
+                case '+':
+                    birinshiSan = tvSan.getText().toString();
 
-    }
+                    znak = "+";
+                    zapisText = birinshiSan + znak;
+                    tvZapis.setText(zapisText);
+                    tvSan.setText("0");
+            }
+        }
+        public void buttonClick6(int n) {
+            switch (n) {
+                case 'x':
+                    birinshiSan = tvSan.getText().toString();
+
+                    znak = "*";
+                    zapisText = birinshiSan + znak;
+                    tvZapis.setText(zapisText);
+                    tvSan.setText("0");
+            }
+        }
+        public void buttonClick5(int n) {
+            switch (n) {
+                case '-':
+                    birinshiSan = tvSan.getText().toString();
+
+                    znak = "-";
+                    zapisText = birinshiSan + znak;
+                    tvZapis.setText(zapisText);
+                    tvSan.setText("0");
+            }
+        }
+        public void buttonClick7(int n) {
+            switch (n) {
+                case '/':
+                    birinshiSan = tvSan.getText().toString();
+
+                    znak = "/";
+                    zapisText = birinshiSan + znak;
+                    tvZapis.setText(zapisText);
+                    tvSan.setText("0");
+            }
+        }
+        public void buttonClick4(int n) {
+            switch (n) {
+                case '=':
+                    ekinshiSan = tvSan.getText().toString();
+                    if (znak.equals("+")) {
+                        int san1 = Integer.parseInt(birinshiSan);
+                        int san2 = Integer.parseInt(ekinshiSan);
+
+                        int res = san1 + san2;
+                        zapisText = birinshiSan + znak + ekinshiSan + "=" + res;
+                        tvZapis.setText(zapisText);
+                        tvSan.setText(""+res);
+                    }else if(znak.equals("-")) {
+                        int san1 = Integer.parseInt(birinshiSan);
+                        int san2 = Integer.parseInt(ekinshiSan);
+
+                        int res = san1 - san2;
+                        zapisText = birinshiSan + znak + ekinshiSan + "=" + res;
+                        tvZapis.setText(zapisText);
+                        tvSan.setText(""+res);
+                    }else if(znak.equals("*")) {
+                        int san1 = Integer.parseInt(birinshiSan);
+                        int san2 = Integer.parseInt(ekinshiSan);
+
+                        int res = san1 * san2;
+                        zapisText = birinshiSan + znak + ekinshiSan + "=" + res;
+                        tvZapis.setText(zapisText);
+                        tvSan.setText(""+res);
+                    }else if(znak.equals("/")) {
+                        int san1 = Integer.parseInt(birinshiSan);
+                        int san2 = Integer.parseInt(ekinshiSan);
+
+                        int res = san1 / san2;
+                        zapisText = birinshiSan + znak + ekinshiSan + "=" + res;
+                        tvZapis.setText(zapisText);
+                        tvSan.setText(""+res);
+                    }
+            }
+        }
+
+
+
+
+
+}
 

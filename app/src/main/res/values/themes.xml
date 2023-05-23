@@ -13,13 +13,46 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_margin">5dp</item>
         <item name="android:textSize">25sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:background">@drawable/button_basylganda</item>
         <item name="backgroundTint">@null</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="button_numbers_style_land">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:background">@drawable/button_basylganda</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="button_func_style" parent="button_numbers_style">
-        <item name="android:textColor">@color/teal_700</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_back3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="button_func_style_land" parent="button_numbers_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_back3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="button_func_style2" parent="button_numbers_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/button_back4</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="button_func_style2_land" parent="button_numbers_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/button_back4</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>
